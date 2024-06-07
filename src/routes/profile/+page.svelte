@@ -4,9 +4,12 @@
     import {onMount} from "svelte";
 
     let user: SessionUser | undefined;
-
+    let x:string | undefined;
     onMount(() => {
-        user = Corbado.user
+        x = Corbado.shortSession;
+        
+        user = Corbado.user;
+        console.log(x);
     })
 
     async function handleLogout() {
@@ -25,6 +28,24 @@
         </p>
         <p>
             Name: {user.name}
+        </p>
+        <p>
+            User-jti: {user.jti}
+        </p>
+        <p>
+            User-iss: {user.iss}
+        </p>
+        <p>
+            User-iss-iat: {user.iat}
+        </p>
+        <p>
+            User-orig: {user.orig}
+        </p>
+        <p>
+            User-exp: {user.exp}
+        </p>
+        <p>
+            user: {x}
         </p>
         <button on:click={handleLogout}>
             Logout

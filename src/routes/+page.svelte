@@ -3,13 +3,23 @@
     import {onMount} from 'svelte';
 
     let authElement: HTMLDivElement;
-
+   
     onMount(() => {
+        var session =  Corbado.shortSession;
+        if (session)
+        {
+            login();
+        }
         Corbado.mountAuthUI(
             authElement, {
-                onLoggedIn: () => window.location.href = "/profile",
+                onLoggedIn: () => login(),
             })
+        window.location.href = "/#login-init"
     })
-</script>
 
+    function login(){
+        window.location.href = "/profile"
+    }
+
+</script>
 <div bind:this={authElement}></div>

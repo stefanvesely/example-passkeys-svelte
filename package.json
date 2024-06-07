@@ -32,6 +32,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@corbado/web-js": "^2.6.0-alpha.0"
+		"@corbado/web-js": "^2.8.0"
 	}
 }
