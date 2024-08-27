@@ -18,6 +18,7 @@
     })
 
     function login(){
+        console.log(Corbado.shortSession);
         window.location.href = "/profile"
     }
 
